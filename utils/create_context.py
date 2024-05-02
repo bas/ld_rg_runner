@@ -82,3 +82,11 @@ def create_multi_context():
   )
 
   return multi_context
+
+def create_audience_context():
+  audience_key = "aud" + str(uuid.uuid4())
+  audience_context = Context.builder(audience_key) \
+  .set("kind", "audience") \
+  .build()
+
+  return audience_context
